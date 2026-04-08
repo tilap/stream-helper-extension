@@ -1,0 +1,33 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node / tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npmrc.local
+
+# Logs
+logs/
+*.log
+
+# Coverage / test artifacts
+coverage/
+*.lcov
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Build / bundles (if added later)
+dist/
+build/
+out/
+
+# Chrome extension local state (if any gets added later)
+*.crx
+*.pem
