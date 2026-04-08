@@ -50,10 +50,10 @@ EOF
 ## Verify
 
 - Always print the PR URL at the end so the user can open it directly.
-- Prefer capturing the URL directly when creating the PR:
+- Create the PR, then print the URL (compatible with older `gh` versions where `gh pr create` has no `--json` flag):
 
 ```bash
-PR_URL="$(gh pr create --title "<title>" --body "$(cat <<'EOF'
+gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Summary
 - <what changed and why>
 
@@ -63,8 +63,8 @@ PR_URL="$(gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Notes
 - <anything reviewers should know>
 EOF
-)" --json url -q .url)"
-echo "$PR_URL"
+)"
+gh pr view --json url -q .url
 ```
 
 - If the PR already exists (or creation output was lost), fetch and print the URL:
